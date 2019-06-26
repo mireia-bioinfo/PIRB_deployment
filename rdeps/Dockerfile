@@ -1,4 +1,4 @@
-FROM jessie:8.10
+FROM debian:jessie
 
 #LABEL "R latest base image"
 LABEL version="rbase-dependencies"

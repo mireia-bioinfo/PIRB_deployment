@@ -1,4 +1,4 @@
-FROM biocbase:3.7
+FROM biocbase:3.8
 
 LABEL version="Regulomedeps"
 LABEL description="Container with the dependencies speced by MRamos for Regulome shiny app"
