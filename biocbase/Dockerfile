@@ -5,7 +5,7 @@ LABEL description="Base bioconductor 3.8 install for R 3.5.1"
 
 USER root
 
-RUN R -e 'cores <- parallel::detectCores(); options(Ncpus = cores);install.packages("BiocManager"); BiocManager::install()'
+RUN R -e 'cores <- parallel::detectCores(); options(Ncpus = cores);install.packages("BiocManager", repos="https://cran.rediris.es");BiocManager::install()'
 
 USER docker
 WORKDIR /home/docker
