@@ -22,6 +22,9 @@ RUN chown -R docker /home/docker
 RUN mkdir -p /www/
 RUN cp /home/docker/tools/isletregulome_shiny/www/favicon.ico /www/favicon.ico
 
+## Fonts
+RUN cp -r ~/.fonts /.fonts
+
 USER docker
 RUN mkdir /home/docker/tools/isletregulome_shiny/static_data
 # WORKDIR /home/docker/tools/isletregulome_shiny/static_data
