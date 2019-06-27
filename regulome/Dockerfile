@@ -27,16 +27,6 @@ RUN cp -r ~/.fonts /.fonts
 
 USER docker
 RUN mkdir /home/docker/tools/isletregulome_shiny/static_data
-# WORKDIR /home/docker/tools/isletregulome_shiny/static_data
-
-# Include regulome data in the docker image so it can be tested without
-# docker-compose
-# RUN wget http://locke.imppc.local/groups/lplab/regulome-data.tar && \
-#  echo "dd1d7d51fdba4c4a74785ba72f0af8ba  regulome-data.tar" > r# egulome-data.tar.md5 \
-#   md5sum -c regulome-data.tar.md5 && \
-#   tar xf regulome-data.tar && \
-#   rm -f regulome-data.tar && \
-#   rm -f regulome-data.tar.md5
  
 WORKDIR /home/docker/tools/isletregulome_shiny
   
