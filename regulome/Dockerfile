@@ -23,7 +23,9 @@ RUN mkdir -p /www/
 RUN cp /home/docker/tools/isletregulome_shiny/www/favicon.ico /www/favicon.ico
 
 ## Fonts
-RUN cp -r ~/.fonts /.fonts
+#RUN mkdir -p /home/docker/.fonts
+#RUN cp -r /home/docker/.fonts /fonts
+#COPY fonts /home/docker/.fonts
 
 USER docker
 RUN mkdir /home/docker/tools/isletregulome_shiny/static_data

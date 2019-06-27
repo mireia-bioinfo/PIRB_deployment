@@ -8,17 +8,12 @@ options(Ncpus = cores)
 pkglist <- c(
              "shiny",
              "shinythemes",
-             "ggplot2",
+             "shinycssloaders",
+             "shinyjs",
              "cowplot",
              "Hmisc",
              "GenomicRanges",
-             "ggbio",
-             "Rsamtools",
              "rtracklayer",
-             "shinycssloaders",
-             "shinyjs",
-             "magrittr",
-             "Homo.sapiens",
              "regioneR",
              "scales",
              "ggrepel",
@@ -26,13 +21,10 @@ pkglist <- c(
              "DT",
              "devtools",
              "roxygen2",
-             "ggrepel",
              "formattable",
              "markdown",
-             "purr",
              "tidyselect",
-             "Hmisc",
-             "shinyjs"
+             "extrafonts"
              )
 
 install(pkglist)

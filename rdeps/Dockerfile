@@ -41,6 +41,8 @@ RUN apt-get update && apt-get install -y \
   libmysqlclient-dev \
   libxml2-dev \
   libssl-dev \
+  ttf-mscorefonts-installer \
+  texlive-fonts-recommended \
   && apt-get clean
 ###
 CMD []
