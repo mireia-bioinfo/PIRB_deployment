@@ -42,5 +42,10 @@ RUN apt-get update && apt-get install -y \
   libxml2-dev \
   libssl-dev \
   && apt-get clean
+
+## Manage and install fonts
+RUN mkdir ~/.local/share/
+ADD fonts ~/.local/share/
+
 ###
 CMD []
