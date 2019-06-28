@@ -46,6 +46,7 @@ RUN apt-get update && apt-get install -y \
 ## Manage and install fonts
 RUN mkdir ~/.local/share/
 ADD fonts ~/.local/share/
+RUN fc-cache -f -v
 
 ###
 CMD []
