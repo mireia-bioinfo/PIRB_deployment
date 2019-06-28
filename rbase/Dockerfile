@@ -8,7 +8,7 @@ LABEL description="Base R image to be used in shiny apps"
 
 
 WORKDIR /tmp
-RUN curl https://cran.rediris.es/src/base/R-3/R-3.5.1.tar.gz | tar xz -C /tmp --strip 1 \
+RUN curl https://cran.r-project.org/src/base/R-3/R-3.5.1.tar.gz | tar xz -C /tmp --strip 1 \
   && ./configure --with-tcltk --enable-R-shlib --with-libpng \
      --with-jpeglib --with-system-zlib --with-cairo --with-libtiff \
   && make -j `nproc` \

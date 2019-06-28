@@ -24,8 +24,10 @@ pkglist <- c(
              "formattable",
              "markdown",
              "tidyselect",
-             "extrafonts"
+             "extrafont"
              )
 
 install(pkglist)
+
+extrafont::font_import(prompt=F)
 

@@ -43,9 +43,11 @@ RUN apt-get update && apt-get install -y \
   libssl-dev \
   ttf-mscorefonts-installer \
   texlive-fonts-recommended \
+  fontconfig \
   && apt-get clean
 
 ## Manage and install fonts
+RUN mkdir ~/.local/
 RUN mkdir ~/.local/share/
 ADD fonts ~/.local/share/
 RUN fc-cache -f -v
