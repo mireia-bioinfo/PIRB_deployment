@@ -13,7 +13,6 @@ pkglist <- c(
              "cowplot",
              "Hmisc",
              "GenomicRanges",
-             "rtracklayer",
              "regioneR",
              "scales",
              "ggrepel",

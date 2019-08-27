@@ -8,8 +8,8 @@ LABEL description="Running regulome app under docker"
 USER docker
 RUN mkdir -p /home/docker/tools/
 WORKDIR /home/docker/tools/
-RUN git clone https://github.com/mireia-bioinfo/isletregulome_shiny.git \
-  && git clone https://github.com/mireia-bioinfo/plotRegulome.git
+RUN git clone -b devel https://github.com/mireia-bioinfo/isletregulome_shiny.git \
+  && git clone -b devel https://github.com/mireia-bioinfo/plotRegulome.git
 
 USER root
 RUN chown -R docker /home/docker
@@ -22,14 +22,11 @@ RUN chown -R docker /home/docker
 RUN mkdir -p /www/
 RUN cp /home/docker/tools/isletregulome_shiny/www/favicon.ico /www/favicon.ico
 
-## Fonts
-#RUN mkdir -p /home/docker/.fonts
-#RUN cp -r /home/docker/.fonts /fonts
-#COPY fonts /home/docker/.fonts
-
 USER docker
-RUN mkdir /home/docker/tools/isletregulome_shiny/static_data
- 
+
 WORKDIR /home/docker/tools/isletregulome_shiny
-  
+
+## For devel version
+RUN R -f devel_install_database.R 
+   
 CMD ["R", "-f", "runIsletRegulome.R"]

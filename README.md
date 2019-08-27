@@ -2,6 +2,21 @@
 
 ## Docker pipeline for deploying the IRB
 
+### Devel local testing
+
+Uncomment the line on the regulome Dockerfile to download the datasets internally in the regulome image: `RUN R -f devel_install_database.R`.
+
+Run the following build the image and run it to be able to access the regulome from your browser:
+
+```
+docker build -t regulome:devel . --no-cache
+docker run -p 80:3838 regulome:devel
+```
+
+Go to [http://127.0.0.1:80](http://127.0.0.1:80) and explore the islet regulome browser.
+
+### Deployment on regulome server
+
 When changes are made to the two IRB github repositories: 
 ```
 docker login
