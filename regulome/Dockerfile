@@ -27,6 +27,6 @@ USER docker
 WORKDIR /home/docker/tools/isletregulome_shiny
 
 ## For devel version
-RUN R -f devel_install_database.R 
+# RUN R -f devel_install_database.R 
    
 CMD ["R", "-f", "runIsletRegulome.R"]
