@@ -8,11 +8,11 @@ LABEL description="Running regulome app under docker"
 USER docker
 RUN mkdir -p /home/docker/tools/
 WORKDIR /home/docker/tools/
-# RUN git clone -b devel https://github.com/mireia-bioinfo/isletregulome_shiny.git \
-#   && git clone -b devel https://github.com/mireia-bioinfo/plotRegulome.git
+RUN git clone -b devel https://github.com/mireia-bioinfo/isletregulome_shiny.git \
+  && git clone -b devel https://github.com/mireia-bioinfo/plotRegulome.git
 
-RUN git clone https://github.com/mireia-bioinfo/isletregulome_shiny.git \
-  && git clone https://github.com/mireia-bioinfo/plotRegulome.git
+#RUN git clone https://github.com/mireia-bioinfo/isletregulome_shiny.git \
+#  && git clone https://github.com/mireia-bioinfo/plotRegulome.git
 
 USER root
 RUN chown -R docker /home/docker
