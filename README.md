@@ -9,5 +9,5 @@ This repository contains information and code on how the PIRB app is deployed:
 2. **Shinyproxy docker image**. 
 
 
-[shiny]: https://shiny.rstudio.com/
-[plotRegulome]: https://github.com/mireia-bioinfo/plotRegulome
+[1]: https://shiny.rstudio.com/
+[2]: https://github.com/mireia-bioinfo/plotRegulome
