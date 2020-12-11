@@ -1,6 +1,0 @@
-# apt repo
-# local mirror
-deb http://172.19.5.26/debian jessie main contrib non-free
-# security repos
-deb http://security.debian.org/ jessie/updates  main contrib non-free
-deb-src http://security.debian.org/ jessie/updates  main contrib non-free
