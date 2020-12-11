@@ -1,3 +1,4 @@
 ._Dockerfile
 ._sources.list
 *.jar
+*.log
