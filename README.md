@@ -17,6 +17,10 @@ This repository contains information and code on how the PIRB app is deployed:
 cd docker_shinyApp
 docker build . -t pirb-nodata
 ```
+To test that the docker image works, we can run it directly:
+```
+docker run -d -p 3838:3838 -v /home/mramos/Projects/PIRB/PIRB_database:/root/regulome/isletregulome_shiny/IRB_database pirb-nodata
+```
 
 2. Create internal network to allow container communication.
 ```
@@ -31,5 +35,15 @@ docker build . -t shinyproxy-pirb
 
 4. Run shinyproxy docker image.
 ```
-docker run -d -v /var/run/docker.sock:/var/run/docker.sock --net pirb-net -p 8080:8080 shinyproxy-pirb
+docker run -d -v /var/run/docker.sock:/var/run/docker.sock --net pirb-net -p 8080:8080 -v /home/mramos/Projects/PIRB/PIRB_deployment/shinyproxylogs:/opt/shinyproxy/logs shinyproxy-pirb
+```
+
+
+## Other usefool tools
+
+Test stuff:
+
+```
+docker ps # Check containers running
+docker exec -it <cont-id> /bin/bash # Interactive session in running container
 ```
