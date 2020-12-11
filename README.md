@@ -19,7 +19,7 @@ docker build . -t pirb-nodata
 ```
 To test that the docker image works, we can run it directly:
 ```
-docker run -d -p 3838:3838 -v /home/mramos/Projects/PIRB/PIRB_database:/root/regulome/isletregulome_shiny/IRB_database pirb-nodata
+docker run -d -p 3838:3838 -v /home/regulome/PIRB_database:/root/regulome/isletregulome_shiny/IRB_database pirb-nodatadocke
 ```
 
 2. Create internal network to allow container communication.
@@ -35,7 +35,7 @@ docker build . -t shinyproxy-pirb
 
 4. Run shinyproxy docker image.
 ```
-docker run -d -v /var/run/docker.sock:/var/run/docker.sock --net pirb-net -p 8080:8080 -v /home/mramos/Projects/PIRB/PIRB_deployment/shinyproxylogs:/opt/shinyproxy/logs shinyproxy-pirb
+docker run -d -v /var/run/docker.sock:/var/run/docker.sock --net pirb-net -p 8080:8080 -v /home/regulome/shinyproxylogs:/opt/shinyproxy/logs shinyproxy-pirb
 ```
 
 
