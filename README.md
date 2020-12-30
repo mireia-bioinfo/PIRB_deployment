@@ -28,14 +28,9 @@ To test that the docker image works, we can run it directly:
 docker run -d -p 3838:3838 -v /home/regulome/PIRB_database:/root/regulome/isletregulome_shiny/PIRB_database pirb-nodata
 ```
 
-2. Create internal network to allow container communication.
-```
-docker network create pirb-net
-```
-
 ### Using ShinyProxy Java App
 
-3. Download and run shinyproxy using java
+2. Download and run shinyproxy using java
 ```
 cd java_shinyProxy
 wget https://www.shinyproxy.io/downloads/shinyproxy-2.4.1.jar 
@@ -43,6 +38,11 @@ java -jar shinyproxy-2.4.1.jar
 ```
 
 ### Using ShinyProxy Docker Image
+
+2. Create internal network to allow container communication.
+```
+docker network create pirb-net
+```
 
 3. Build shinyproxy docker image.
 ```
