@@ -2,7 +2,7 @@ proxy:
   title: Islet Regulome Browser
   hide-navbar: true
   landing-page: /app/isletregulome/
-  favicon-path: static/favicon.png
+  favicon-path: /home/regulome/PIRB_deployment/java_shinyProxy/static/favicon.png
   heartbeat-rate: 10000
   heartbeat-timeout: 60000
   port: 8080
