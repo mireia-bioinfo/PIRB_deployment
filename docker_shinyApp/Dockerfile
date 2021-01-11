@@ -18,9 +18,9 @@ USER root
 RUN mkdir /root/regulome
 WORKDIR /root/regulome
 
-RUN git clone git@github.com:mireia-bioinfo/PIRB_shinyApp.git
+RUN git clone https://github.com/mireia-bioinfo/PIRB_shinyApp.git
 
-RUN rm /root/regulome/isletregulome_shiny/runIsletRegulome.R
+RUN rm /root/regulome/PIRB_shinyApp/runIsletRegulome.R
 
 #RUN R CMD INSTALL /root/regulome/plotRegulome
 
@@ -30,7 +30,7 @@ RUN rm /root/regulome/isletregulome_shiny/runIsletRegulome.R
 # Other configuration ---------------------------
 COPY Rprofile.site /usr/lib/R/etc/
 
-RUN ls /root/regulome/isletregulome_shiny/
+RUN ls /root/regulome/PIRB_shinyApp/
 
 ## Favicon
 #RUN mkdir -p /www/
@@ -38,4 +38,4 @@ RUN ls /root/regulome/isletregulome_shiny/
 
 EXPOSE 3838
 
-CMD ["R", "-e", "shiny::runApp('/root/regulome/isletregulome_shiny',  host='0.0.0.0', port = 3838)"]
+CMD ["R", "-e", "shiny::runApp('/root/regulome/PIRB_shinyApp',  host='0.0.0.0', port = 3838)"]

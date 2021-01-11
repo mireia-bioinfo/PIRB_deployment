@@ -16,7 +16,7 @@ proxy:
   - id: isletregulome 
     display-name: Islet Regulome Browser
     container-image: pirb-nodata
-    container-volumes: [ "/home/regulome/PIRB_database:/root/regulome/isletregulome_shiny/PIRB_database" ]
+    container-volumes: [ "/home/regulome/PIRB_database:/root/regulome/PIRB_shinyApp/PIRB_database" ]
     container-network: pirb-net
 
 logging:
