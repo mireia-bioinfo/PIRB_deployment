@@ -18,7 +18,7 @@ USER root
 RUN mkdir /root/regulome
 WORKDIR /root/regulome
 
-RUN git clone https://github.com/mireia-bioinfo/isletregulome_shiny.git
+RUN git clone git@github.com:mireia-bioinfo/PIRB_shinyApp.git
 
 RUN rm /root/regulome/isletregulome_shiny/runIsletRegulome.R
 
