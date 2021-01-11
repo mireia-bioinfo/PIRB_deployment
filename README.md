@@ -25,7 +25,7 @@ docker build . -t pirb-nodata
 ```
 To test that the docker image works, we can run it directly:
 ```
-docker run -d -p 3838:3838 -v /home/regulome/PIRB_database:/root/regulome/isletregulome_shiny/PIRB_database pirb-nodata
+docker run -d -p 3838:3838 -v /home/regulome/PIRB_database:/root/regulome/PIRB_shinyApp/PIRB_database pirb-nodata
 ```
 
 ### Using ShinyProxy Java App
