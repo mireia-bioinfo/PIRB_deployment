@@ -1,4 +1,4 @@
-FROM bioconductor/bioconductor_docker:RELEASE_3_11
+ FROM bioconductor/bioconductor_docker:RELEASE_3_11
 
 # For reference: https://vsupalov.com/build-docker-image-clone-private-repo-ssh-key/
 LABEL version="Regulome"
@@ -18,14 +18,13 @@ USER root
 RUN mkdir /root/regulome
 WORKDIR /root/regulome
 
-RUN git clone https://github.com/mireia-bioinfo/PIRB_shinyApp.git
+ADD "https://api.github.com/repos/mireia-bioinfo/PIRB_shinyApp/commits?per_page=1" latest_commit
+RUN curl -sLO "https://github.com/mireia-bioinfo/PIRB_shinyApp/archive/master.zip" && unzip master.zip
+RUN mv PIRB_shinyApp-master PIRB_shinyApp
+
+#RUN git clone https://github.com/mireia-bioinfo/PIRB_shinyApp.git
 
 RUN rm /root/regulome/PIRB_shinyApp/runIsletRegulome.R
-
-#RUN R CMD INSTALL /root/regulome/plotRegulome
-
-# Copy data -------------------------------------
-#COPY IRB_database /root/regulome/isletregulome_shiny/IRB_database
 
 # Other configuration ---------------------------
 COPY Rprofile.site /usr/lib/R/etc/
